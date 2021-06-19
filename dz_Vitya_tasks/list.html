@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Product List</title>
+</head>
+
+<style>
+  a {
+    text-decoration: none;
+    color: blue;
+    border-bottom: 1px solid blue;
+  }
+</style>
+
+<body>
+  <h2><a href="./index.html">На головну</a></h2>
+  <div id="list"></div>
+
+
+  <script>
+    const listDiv = document.getElementById('list');
+    listDiv.style.display = `flex`
+       listDiv.style.flexWrap = `wrap`
+    listDiv.style.gap = `50px`
+    const key = 'store'
+    let store = JSON.parse(localStorage.getItem(key)) || [];
+
+    const showList = () => {
+      if (!store.length) {
+        const empty = document.createElement('h3');
+        empty.innerText = 'Корзина пуста'
+        listDiv.appendChild(empty)
+      }
+
+      for (let item of store) {
+        const itemDiv = document.createElement('div');
+        const imgE = document.createElement('img');
+        const nameE = document.createElement('p');
+        const priceE = document.createElement('p');
+        const button = document.createElement('button');
+        imgE.src = item.img
+        imgE.style.width = `300px`
+        nameE.innerText = `Назва товару: ${item.name}`
+        priceE.innerText = `Ціна товару: ${item.price}`
+        button.innerText = 'Видалити'
+        button.onclick = () => {
+          deleteItem(item.id)
+        }
+        itemDiv.append(imgE, nameE, priceE, button)
+        itemDiv.style.border = `1px solid #ccc`
+        itemDiv.style.width = `300px`
+        itemDiv.style.textAlign = `center`
+        listDiv.appendChild(itemDiv)
+      }
+    }
+
+    const deleteItem = (id) => {
+      store = store.filter(value => value.id !== id)
+      localStorage.setItem(key, JSON.stringify(store))
+      listDiv.innerHTML = '';
+      showList();
+    }
+
+    showList()
+  </script>
+</body>
+
+</html>

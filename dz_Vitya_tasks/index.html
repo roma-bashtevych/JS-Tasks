@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  /* клас .text для візуального відокремлення завдань  */
+  .text {
+    width: 100%;
+    height: 5px;
+    background-color: silver;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  #text {
+    width: 60px;
+    height: 60px;
+    background-color: silver;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .menu {
+    transition: transform 0.5s ease;
+  }
+
+  .menu.active {
+    transform: translateX(-100%);
+  }
+
+  .slider {
+    width: 500px;
+    object-fit: contain;
+  }
+
+  img {
+    display: none;
+  }
+
+  .block {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .width-form {
+    max-width: 300px;
+  }
+
+  a {
+    text-decoration: none;
+    color: blue;
+    border-bottom: 1px solid blue;
+  }
+</style>
+
+<body>
+  <!-- TASK 121 -->
+  <div id="text"></div>
+  <!-- TASK 122 -->
+  <button class="button">Скрить</button>
+
+  <div class="text"></div>
+  <!-- TASK 123 -->
+  <form class="form" action="#">
+    <input class="form__input" type="text" placeholder="Введіть свій вік">
+    <input class="form__submit" type="submit" value="Оk">
+  </form>
+
+  <div class="text"></div>
+  <!-- TASK 124 -->
+  <button id="menu__btn">Menu</button>
+  <ul class="menu">
+    <li class="menu__item">Item1</li>
+    <li class="menu__item">Item2</li>
+    <li class="menu__item">Item3</li>
+    <li class="menu__item">Item4</li>
+  </ul>
+
+  <div class="text"></div>
+
+  <form id="form1" action="#" name="form">
+    <input class="form1__input" type="text" name="input1" placeholder="Введіть інфу">
+  </form>
+  <form id="form2" action="#" name="form">
+    <input class="form2__input" type="text" name="input2" placeholder="Введіть інфу">
+  </form>
+
+  <button class="form-button">Show info</button>
+
+  <div class="text"></div>
+
+  <div class="elem"></div>
+
+  <div class="text"></div>
+
+  <button class="button-back">Back</button>
+  <div class="slider">
+    <img src="https://assets.foxdcg.com/dpp-uploaded/images/the-simpsons/keyart_s33.jpg" class="block" alt="">
+    <img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2020/06/29/43538.jpg" alt="">
+    <img
+      src="https://i0.wp.com/itc.ua/wp-content/uploads/2021/03/the-simpsons.jpg?fit=2000%2C1125&quality=100&strip=all&ssl=1"
+      alt="">
+  </div>
+  <button class="button-next">Next</button>
+  <div class="text"></div>
+
+  <input class="input__words" type="text" placeholder="введіть слово">
+  <button class="button__words">Перевірити</button>
+
+  <div class="text"></div>
+
+  <div class="width-form">
+    <form id="form">
+      <div>
+        <label> Назва товару:<input type="text" name="name"></label>
+      </div>
+      <div>
+        <label>Ціна товару:<input type="number" name="price"></label>
+      </div>
+      <div>
+        <label>Зображення:<input type="text" name="img"></label>
+      </div>
+    </form>
+    <button id="btn">Зберегти</button>
+    <h2><a href="./list.html">Перейти в корзину</a></h2>
+  </div>
+
+  <div class="text"></div>
+
+<form action="#" id="formCheck">
+  <input type="checkbox">
+  <input type="checkbox">
+  <input type="checkbox">
+</form>
+
+
+    <div class="text"></div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

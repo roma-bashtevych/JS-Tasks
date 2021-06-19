@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  img {
+    max-width: 200px;
+  }
+</style>
+
+<body>
+
+  <button class="button" type="button">Delete</button>
+
+  <script>
+
+
+
+    let item = localStorage.getItem('user');
+
+    let parse = JSON.parse(item);
+
+
+    let body = document.body
+    let h1 = document.createElement('h1');
+    // let p = document.createElement('p');
+    let span = document.createElement('span');
+    let div = document.createElement('div');
+    body.appendChild(h1);
+    // body.appendChild(p);
+    body.appendChild(span);
+    body.appendChild(div);
+    h1.innerHTML = `${parse.name}`;
+    // p.innerHTML = `кількість товару - ${parse.quantity}`;
+    span.innerHTML = `ціна товару - ${parse.price}`;
+    div.innerHTML = `<img src='${parse.img}'>`;
+
+
+
+let button = document.querySelector('.button');
+
+button.addEventListener('click', function () {
+localStorage.removeItem('user')
+})
+    
+  </script>
+</body>
+
+</html>
